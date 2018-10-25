@@ -39,7 +39,7 @@ OpenStreetMap_Mapnik.addTo(map);
 
 var geocoder = L.mapbox.geocoder("mapbox.places");
 
-map.locate({setView: true, maxZoom: 15});
+//map.locate({setView: true, maxZoom: 15});
 
 function onLocationFound(e) {
     var radius = e.accuracy / 2;
@@ -50,9 +50,13 @@ function onLocationFound(e) {
         fillColor: 'blue',
         fillOpacity: 1
     }).addTo(map)
-        .bindPopup("You are within " + radius + " meters from this point").openPopup();
+        //.bindPopup("You are within " + radius + " meters from this point").openPopup();
 
     L.circle(e.latlng, radius).addTo(map);
 }
 
 map.on('locationfound', onLocationFound);
+
+L.easyButton('fa-location-arrow', function(btn, map){
+    map.locate({setView: true, maxZoom: 15});
+}).addTo( map );
