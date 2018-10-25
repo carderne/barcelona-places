@@ -100,8 +100,12 @@ function onLocationFound(e) {
 }
 
 // button to locate user
-L.easyButton('fa-location-arrow', function(btn, map){
+L.easyButton('fa-location-arrow', function(btn, map) {
     map.locate({setView: true, maxZoom: 15});
 }).addTo( map );
 
 map.on('locationfound', onLocationFound);
+
+L.easyButton('fa-user', function (btn, map) {
+	window.open("https://rdrn.me/");
+}).addTo(map);
