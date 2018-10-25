@@ -22,6 +22,17 @@ function addMarker(metadata) {
             lng = data.latlng[1];
             marker = L.marker([lat, lng]).addTo(map);
             marker.bindPopup("<h3>"+metadata.Name+"</h3><p>"+metadata.Address+"</p><p>"+metadata.Notes+"</p>");
+
+            // AwesomeMarkers is used to create fancier icons
+            var icon = L.AwesomeMarkers.icon({
+                icon: getIcon(metadata.Category),
+                iconColor: "white",
+                markerColor: getColor(metadata.Category),
+                prefix: "fa",
+                extraClasses: "fa-rotate-0"
+            });
+            marker.setIcon(icon);
+
     }
 }
 
@@ -60,3 +71,46 @@ map.on('locationfound', onLocationFound);
 L.easyButton('fa-location-arrow', function(btn, map){
     map.locate({setView: true, maxZoom: 15});
 }).addTo( map );
+
+
+// Returns different colors depending on the string passed
+// Used for the points layer
+function getColor(type) {
+    console.log(type)
+    switch (type) {
+        case "Bakery":
+            return "blue";
+        case "Coffee shop":
+            return "green";
+        case "Restaurant":
+            return "cadetblue";
+        case "Store":
+            return "orange"; // orange-gold
+        case "Supermarket":
+            return "red"; // red
+        default:
+            return "purple"; // pink
+
+    }
+}
+
+// Returns different icon names depending on the string passed
+// Used for the points layer
+function getIcon(type) {
+    console.log(type)
+    switch (type) {
+        case "Bakery":
+            return "birthday-cake";
+        case "Coffee shop":
+            return "coffee";
+        case "Restaurant":
+            return "cutlery";
+        case "Store":
+            return "shopping-basket"; // orange-gold
+        case "Supermarket":
+            return "shopping-cart"; // red
+        default:
+            return "info"; // pink
+
+    }
+}
