@@ -99,9 +99,14 @@ function onLocationFound(e) {
     L.circle(e.latlng, radius).addTo(map);
 }
 
+var locationButtonClicked = false;
+
 // button to locate user
 L.easyButton('fa-location-arrow', function(btn, map) {
-    map.locate({setView: true, maxZoom: 15});
+	if (!locationButtonClicked) {
+		locationButtonClicked = true;
+    	map.locate({setView: true, maxZoom: 15});
+    }
 }).addTo( map );
 
 map.on('locationfound', onLocationFound);
