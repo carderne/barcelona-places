@@ -96,7 +96,7 @@ function onLocationFound(e) {
 
     var radius = e.accuracy / 2;
 
-    L.circleMarker(e.latlng, {
+    locationCircleMarker = L.circleMarker(e.latlng, {
         radius: 10,
         color: 'white',
         fillColor: 'blue',
@@ -104,7 +104,7 @@ function onLocationFound(e) {
     }).addTo(map);
         //.bindPopup("You are within " + radius + " meters from this point").openPopup();
 
-    L.circle(e.latlng, radius).addTo(map);
+    locationCircle = L.circle(e.latlng, radius).addTo(map);
 }
 
 // button to locate user
