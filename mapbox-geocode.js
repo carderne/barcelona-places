@@ -84,8 +84,16 @@ function getIcon(type) {
     }
 }
 
+var locationCircle;
+var locationCircleMarker;
+
 // Add a blue marker and accuracy ring to the user's location
 function onLocationFound(e) {
+	if (locationCircle != null && locationCircleMarker != null) {
+		locationCircle.remove();
+		locationCircleMarker.remove();
+	}
+
     var radius = e.accuracy / 2;
 
     L.circleMarker(e.latlng, {
@@ -99,14 +107,9 @@ function onLocationFound(e) {
     L.circle(e.latlng, radius).addTo(map);
 }
 
-var locationButtonClicked = false;
-
 // button to locate user
 L.easyButton('fa-location-arrow', function(btn, map) {
-	if (!locationButtonClicked) {
-		locationButtonClicked = true;
-    	map.locate({setView: true, maxZoom: 15});
-    }
+    map.locate({setView: true, maxZoom: 15});
 }).addTo( map );
 
 map.on('locationfound', onLocationFound);
