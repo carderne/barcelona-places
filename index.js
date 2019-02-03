@@ -1,10 +1,10 @@
 /**
  * Script to import a spreadsheet from Google Sheets and use MapBox Geocoding to display the elements on a simple map
  * Code lives on GitHub: https://github.com/carderne/barcelona-places
- * (c) Chris Arderne
+ * MIT License (c) Chris Arderne
  */
 
-// Set up map and import my basemap from MapBox Studio
+// Set up map and import basemap from MapBox Studio
 L.mapbox.accessToken = 'pk.eyJ1IjoiY2FyZGVybmUiLCJhIjoiY2puZnE3YXkxMDBrZTNrczI3cXN2OXQzNiJ9.2BDgu40zHwh3CAfHs6reAQ';
 var map = L.mapbox.map('map').setView([41.40, 2.17], 14);
 
@@ -38,7 +38,6 @@ function geocodeData(data, tabletop) {
             addMarker(latlng, data[row])
         // Otherwise we need to use the MapBox geocoder to get coordinates.
         } else {
-            console.log('HELLO')
             geocoder.query({
                 query: data[row].Name + ", " + data[row].Address + ", Barcelona",
                 country: 'es',

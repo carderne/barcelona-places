@@ -1,34 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset='utf-8' />
-<title>Barcelona Places</title>
+    <meta charset='utf-8' />
+    <title>Barcelona Places</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
-<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-<script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+    <script src='assets/js/tabletop.min.js'></script>
+    <script src='assets/js/mapbox.js'></script>
+    <link href='assets/css/mapbox.css' rel='stylesheet' />
+    <link rel="stylesheet" href="assets/css/easy-button.css">
+    <script src="assets/js/easy-button.js"></script>
+    <link rel="stylesheet" href="assets/css/leaflet.awesome-markers.css"/>
+    <script src="assets/js/leaflet.awesome-markers.min.js"></script>
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
 
-<script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
-<link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' />
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
-<script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
-
-<style>
-    body { margin:0; padding:0; }
-    #map { position:absolute; top:0; bottom:0; width:100%; }
-</style>
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
 </head>
 <body>
-
-
-<div id='map'></div>
-
-<script type="text/javascript" src="mapbox-geocode.js"></script>
-
+    <div id='map'></div>
+    <script type="text/javascript" src="index.js"></script>
 </body>
 </html>
