@@ -1,7 +1,7 @@
 {
     "name": "Barcelona",
     "short_name": "Barcelona",
-    "start_url": "/",
+    "start_url": "/barcelona-places",
     "icons": [
         {
             "src": "favicon.png",
