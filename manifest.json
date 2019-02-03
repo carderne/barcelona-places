@@ -1,15 +1,16 @@
 {
     "name": "Barcelona",
     "short_name": "Barcelona",
+    "start_url": "/",
     "icons": [
         {
             "src": "favicon.png",
-            "sizes": "180x180",
+            "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "favicon-256x256.png",
-            "sizes": "256x256",
+            "src": "favicon-512x512.png",
+            "sizes": "512x512",
             "type": "image/png"
         }
     ],
