@@ -1,5 +1,6 @@
+# Custom
 gspread-access.json
-barcelona-geocoding.ipynb
+geocode_api.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
