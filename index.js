@@ -9,7 +9,7 @@ L.mapbox.accessToken = 'pk.eyJ1IjoiY2FyZGVybmUiLCJhIjoiY2puZnE3YXkxMDBrZTNrczI3c
 var map = L.mapbox.map('map').setView([41.40, 2.17], 14);
 
 // Add the style to your map as image tiles
-L.mapbox.styleLayer('mapbox://styles/carderne/cjnoj4ubt0vxq2rn2lbi3aos2', {
+L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11', {
 	attribution: '&copy; <a href="https://github.com/carderne/barcelona-places">Chris Arderne</a>'
 }).addTo(map);
 
